@@ -1,0 +1,4 @@
+In this 100 days, I'll build at least 20 apps in Rails which includes small and larger ones, so as to become really proficient in Back End. It'll also include some of the new things which I will try to learn such as writing larger apps in React's latest version, since I've lost touch with it.
+
+Day 1:
+Traversy Media's crash course on Rails begins. It's of 2 hrs only, so I'll try to wrap that up as fast as possible.
