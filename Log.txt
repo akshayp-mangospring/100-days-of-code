@@ -6,3 +6,7 @@ https://guides.rubyonrails.org/
 
 Day 1:
 Traversy Media's crash course on Rails begins. It's of 2 hrs only, so I'll try to wrap that up as fast as possible.
+Rails works on MVC - Model layer talks with DB, Controllers handle requests and Views handle the display of page to the user.
+
+Today's App:
+The App is a Food Log App which takes in entries for the food which a person has in one day. The food entries are grouped according to a day, the latest day is shown first, then the previous days, in descending order. In a day the first 3 entries are shown with a "View all entries for the day" button which takes us to a new page whcih has entries for the entire day. We can also see the total intake of food in a day by clicking on "View all entries for the day".
