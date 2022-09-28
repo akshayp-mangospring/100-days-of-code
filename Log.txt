@@ -12,5 +12,8 @@ Today's App:
 The App is a Food Log App which takes in entries for the food which a person has in one day. The food entries are grouped according to a day, the latest day is shown first, then the previous days, in descending order. In a day the first 3 entries are shown with a "View all entries for the day" button which takes us to a new page whcih has entries for the entire day. We can also see the total intake of food in a day by clicking on "View all entries for the day".
 
 Day 2:
+Yesterday's `food_log` app isn't even complete. I'll complete it later by myself. I didn't work on anything on this today. Such a sham!
+
+Day 3:
 I'll start off with DHH's starter video from Rails website.
 I'll also start off with reading the Docs for rails from Rails Guides. In it, I'm going to read Active Record Active Model in detail.
