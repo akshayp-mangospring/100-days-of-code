@@ -1,0 +1,24 @@
+Rails runs on a hell lot of good engineering principles and conventions. Although some things might seem cheesy in Rails. But I have to work in Rails regardless.
+Rails runs by default on MVC architecture.
+
+So lets get a few basic Rails things cleared out of our head. This is my understanding of the Rails framework so far:
+
+Model - Supposed to maintain the entities in the DB, generally a model has got a DB table associated with it. When we use a model with Active Record what it does is that it converts a DB Table object into a Rails object which is easy to interact with.
+
+Controller - Each model has got only one controller associated with it. It's supposed to manage the data flow between model & view. It also maintains the actions which are going to be fired on each route. Rails is kind of intuitive in this. Meaning if there's a route called `index` for a model, then in it's controller implicitly the action(it's nothing but a function which will get fired on a specific route) `index` will be fired. It's in the controllers where we get to define the `@instance` variables. An instance variable once defined in an action then it will automatically be accessible in the view file, partial files and helper files.
+
+View - Supposed to manage what is shown to the user: the HTML. This can have util funcs written in helpers for the specific models. Rails is kind of intuitive in this as well. A view file is suppoed to be in place for the corresponding action, which means, if there's an action called as `index` in a controller then there must exist a file called `index.html.erb` in the views folder for that controller. Since it'll get called implicitly whenever that action is hit. Each action has got only one view file associated with it. Since such view files aren't everything there is to Rails, we can even create partials or helpers to maintain, share our view code.
+
+Helpers - Are the funcs written in Rails to remove logic from a view file and maintain it in a separate file since Rails views aren't supposed to have much logic in them. By definition the Rails files are supposed to have their logic written in Models - all the queries, Controllers - all the data passing logic.
+
+ActiveRecord - This is the thing which keeps Rails running which is basically an Object-Relational-Mapper(ORM). What it does is it converts DB Tables and all it's associations in Ruby objects which are so much easier to access than direct DB rows. Although these can give a performance hit when we are dealing with large amounts of data since the conversion of DB rows to Ruby objects and all of it's associations is costly, we need to resort to pure SQL when in such scenarios.
+
+Routes file - This is the file in which we maintain all the publicly accessible routes. We can also specify which action from which controller will get fired on which route in this file itself.
+
+Migrations - These files are the changes which we propose to our DB. In such files we define associations which we are going to have across multiple tables. Even if we specify the associations in these files we need to go explicitly in each of the models to specify the associations there as well, otherwise ActiveRecord will not recognize these associations.
+
+CRUD ops - These are the basic Create, Read, Update, Delete ops which are performed on any entity/model. These ops must be developed for each entity.
+
+Gems - These are dependencies which we make our Rails app run through.
+
+Rake Tasks - ?
