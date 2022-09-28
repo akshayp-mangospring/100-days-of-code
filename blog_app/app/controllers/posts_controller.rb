@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
 
+  # index, show, new, edit => These actions have templates associated with them, rest of them don't.
+
   # GET /posts or /posts.json
   def index
     @posts = Post.all
@@ -11,7 +13,9 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/new
+  # What this action does is that it gets fired on the `/posts/new` route. It in essence returns a view file.
   def new
+    # This isn't actually a Post from the DB. It's actually just a plain blank rails object of Posts getting assigned as an instance variable for the view files.
     @post = Post.new
   end
 
@@ -60,6 +64,7 @@ class PostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
+      # This is an actual DB entry object
       @post = Post.find(params[:id])
     end
 
