@@ -3,6 +3,8 @@ class PostsController < ApplicationController
 
   # index, show, new, edit => These actions have templates associated with them, rest of them don't.
 
+  # This is shipped by default for every route?
+  # I mean /posts & /posts.json for both HTML & JSON formats?
   # GET /posts or /posts.json
   def index
     @posts = Post.all

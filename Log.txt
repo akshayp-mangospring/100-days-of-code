@@ -17,3 +17,9 @@ Yesterday's `food_log` app isn't even complete. I'll complete it later by myself
 Day 3:
 I'll start off with DHH's starter video from Rails website.
 I'll also start off with reading the Docs for rails from Rails Guides. In it, I'm going to read Active Record Active Model in detail.
+Today, I just started with DHH's video for Rails and added notes for Rails which I can use for future references. I've just completed 4 mins out of 34 mins in DHH's video. My most of the time was spent in making notes. However, I'll make sure that I spend more time on actual programming in the upcoming days.
+
+Day 4:
+Finish off DHH's video and start off on Food Log app again.
+Start making faster progress in Rails, since I think I'm going very slow.
+Start reading Active Record basics. I think I need to get my hand on DB deisgn as well quickly.
