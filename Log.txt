@@ -1,25 +1,34 @@
 In this 100 days, I'll build at least 20 apps in Rails which includes small and larger ones, so as to become really proficient in Back End. It'll also include some of the new things which I will try to learn such as writing larger apps in React's latest version, since I've lost touch with it.
 
 Resources to learn:
-https://gorails.com
+https://youtube.com - Primary source
 https://guides.rubyonrails.org/
+https://gorails.com
 
-Day 1:
+Day 1 - 26 September 2022:
 Traversy Media's crash course on Rails begins. It's of 2 hrs only, so I'll try to wrap that up as fast as possible.
 Rails works on MVC - Model layer talks with DB, Controllers handle requests and Views handle the display of page to the user.
 
 Today's App:
 The App is a Food Log App which takes in entries for the food which a person has in one day. The food entries are grouped according to a day, the latest day is shown first, then the previous days, in descending order. In a day the first 3 entries are shown with a "View all entries for the day" button which takes us to a new page whcih has entries for the entire day. We can also see the total intake of food in a day by clicking on "View all entries for the day".
 
-Day 2:
+Day 2 - 27 September 2022:
+Actual:
 Yesterday's `food_log` app isn't even complete. I'll complete it later by myself. I didn't work on anything on this today. Such a sham!
 
-Day 3:
+Day 3 - 28 September 2022:
+Motto:
 I'll start off with DHH's starter video from Rails website.
 I'll also start off with reading the Docs for rails from Rails Guides. In it, I'm going to read Active Record Active Model in detail.
+
+Actual:
 Today, I just started with DHH's video for Rails and added notes for Rails which I can use for future references. I've just completed 4 mins out of 34 mins in DHH's video. My most of the time was spent in making notes. However, I'll make sure that I spend more time on actual programming in the upcoming days.
 
-Day 4:
+Day 4 - 29 September 2022:
+Motto:
 Finish off DHH's video and start off on Food Log app again.
 Start making faster progress in Rails, since I think I'm going very slow.
 Start reading Active Record basics. I think I need to get my hand on DB deisgn as well quickly.
+
+Actual:
+Today, I added a few gotchas in Rails notes. Now resuming on DHH's video.
