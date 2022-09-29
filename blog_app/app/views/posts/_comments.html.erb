@@ -1,0 +1,10 @@
+<% if comments.present? %>
+  <section>
+    <h5>Comments:</h5>
+    <ul>
+      <% comments.each do |c| %>
+        <li id='<%= "post-#{c.post_id}-comment-#{c.id}" %>'><%= c.content %></li>
+      <% end %>
+    </ul>
+  </section>
+<% end %>
