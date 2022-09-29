@@ -52,3 +52,14 @@ I need to know what is a lambda func, procs, blocks, need to wrap my head quickl
 Rails 7 updates:
 Rails 7 now provides the list of methods available on an object in the cmd while tyoing out the query itself, just like it's available in JS consoles. How cool is that! Also now they provide better formatting for the results returned from the Rails console.
 We also have support for Rich Text in WYSIWYG through ActionText that can be installed in Rails with `rails action_text:install`.
+In Rails 7 we have got something called as `importmaps` which let's us use advanced JS syntax without usage of NodeJS in browser, it's built with the support of ES Modules. We can also supposedly install npm packages with the help of cdns in rails, we can also download it with `--download` flag, it'll get downloaded in `vendor/javascript`. All we need to do is just pin it first in `importmap.rb` then import it in `application.js`. Seems, kind of a black box right now, but it'll get clear with practice and research.
+Example to import and use `local-time` in our App.
+Pin step(In terminal):
+`./bin/importmap pin local-time`
+
+Import step(Add this in `application.js`):
+```
+import LocalTime from "local-time";
+
+LocalTime.start();
+```

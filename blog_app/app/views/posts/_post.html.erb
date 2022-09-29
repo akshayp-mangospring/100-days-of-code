@@ -4,6 +4,8 @@
     <%= post.title %>
   </p>
 
+  <p>Posted <%= time_tag post.created_at, 'data-local': 'time-ago' %></p>
+
   <p>
     <strong>Content:</strong>
     <%= post.content %>
