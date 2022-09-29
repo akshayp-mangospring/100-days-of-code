@@ -21,6 +21,8 @@ CRUD ops - These are the basic Create, Read, Update, Delete ops which are perfor
 
 Gems - These are dependencies which we make our Rails app run through.
 
+Scopes - These are somewhat like class methods, we can run those without an instance, they generally have values like a lambda function.
+
 Rake Tasks - ?
 
 In MVC Scenario:
@@ -29,3 +31,14 @@ All `POST/PATCH/PUT/DELETE` routes wither redirects us to some another page or r
 
 In REST Scenario:
 Any route returns us data in json format which is far more lightweight than templates.
+
+Rails Gotchas:
+Rails has a hell lot of gotchas which aren't mentioned anywhere or are discussed in the developer community. Rails adds methods dynamically to a hell lot of things. For example: Enums! Who could have guessed that enums can dynamically add methods to Objects? Enums are supposed to maintain uniqueness and restrict any other values otehr than enum values but Rails adds methods to them!
+Also, I encountered another gotcha with Rails at work, there was some ridiculous query with multiple joins in it, but when I was trying to access some columns from a joined table via an alias I was simply unable to access it with `object.joined_table_aliased_column`, but then a senior dev suggested me to do `object[:joined_table_aliased_column]` and it worked. Now I was totally dumbfounded by looking at and questioning, how could I have guessed that? It was for no particular reason because some aliases were working and some weren't. But anyways, I just moved on.
+
+While working with Rails:
+Make Rails console your best friend that you can turn to anytime when things aren't intuitive and you can't guess them and want to test things out quickly. It also provides a quick way to interact with the data in real time.
+
+When navigating associations through Rails we just need to look at the model files, just have a look at has_many, belongs_to, has_one, etc. somewhere mentioned in the file. One association is mentioned in at least 2 files but in different formats. Something like: Inside `blog.rb` we can spot `has_many :comments`, similarly inside `comment.rb` we can spot `belongs_to :post`. So this association is two way and mentioned in two files in different formats to establish the association between 2 models.
+
+I need to know what is a lambda func, procs, blocks, need to wrap my head quickly around all these to pick up Rails quickly.
