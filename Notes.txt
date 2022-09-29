@@ -5,7 +5,7 @@ So lets get a few basic Rails things cleared out of our head. This is my underst
 
 Model - Supposed to maintain the entities in the DB, generally a model has got a DB table associated with it. When we use a model with Active Record what it does is that it converts a DB Table object into a Rails object which is easy to interact with.
 
-Controller - Each model has got only one controller associated with it. It's supposed to manage the data flow between model & view. It also maintains the actions which are going to be fired on each route. Rails is kind of intuitive in this. Meaning if there's a route called `index` for a model, then in it's controller implicitly the action(it's nothing but a function which will get fired on a specific route) `index` will be fired. It's in the controllers where we get to define the `@instance` variables. An instance variable once defined in an action then it will automatically be accessible in the template(basically a view file), partial files and helper files.
+Controller - Each model has got only one controller associated with it. It's supposed to manage the data flow between model & view. It also maintains the actions which are going to be fired on each route. Rails is kind of intuitive in this. Meaning if there's a route called `index` for a model, then in it's controller implicitly the action(it's nothing but a function which will get fired on a specific route) `index` will be fired. It's in the controllers where we get to define the `@instance` variables.
 
 View - Supposed to manage what is shown to the user: the HTML. This can have util funcs written in helpers for the specific models. Rails is kind of intuitive in this as well. A template is supposed to be in place for the corresponding action, which means, if there's an action called as `index` in a controller then there must exist a file called `index.html.erb` in the views folder for that controller. Since it'll get called implicitly whenever that action is hit. Each action has got only one template associated with it. Since such templates aren't everything there is to Rails, we can even create partials or helpers to maintain, share our view code.
 
@@ -23,6 +23,8 @@ Gems - These are dependencies which we make our Rails app run through.
 
 Scopes - These are somewhat like class methods, we can run those without an instance, they generally have values like a lambda function.
 
+ActiveStorage - We can store our files/data locally using this. But we can point to S3 when we deploy on prod.
+
 Rake Tasks - ?
 
 In MVC Scenario:
@@ -39,6 +41,14 @@ Also, I encountered another gotcha with Rails at work, there was some ridiculous
 While working with Rails:
 Make Rails console your best friend that you can turn to anytime when things aren't intuitive and you can't guess them and want to test things out quickly. It also provides a quick way to interact with the data in real time.
 
+Each model name is accessible as a global variable throughout the app, so when we generate a model called Post. It'll create a file called `post.rb`, in it, it'll create a model called `Post` and then this model would be globally accessible in the App.
+
+`@instance_variables` defined inside a controller action will be automatically accessible inside the corresponding template, helpers, partials.
+
 When navigating associations through Rails we just need to look at the model files, just have a look at has_many, belongs_to, has_one, etc. somewhere mentioned in the file. One association is mentioned in at least 2 files but in different formats. Something like: Inside `blog.rb` we can spot `has_many :comments`, similarly inside `comment.rb` we can spot `belongs_to :post`. So this association is two way and mentioned in two files in different formats to establish the association between 2 models.
 
 I need to know what is a lambda func, procs, blocks, need to wrap my head quickly around all these to pick up Rails quickly.
+
+Rails 7 updates:
+Rails 7 now provides the list of methods available on an object in the cmd while tyoing out the query itself, just like it's available in JS consoles. How cool is that! Also now they provide better formatting for the results returned from the Rails console.
+We also have support for Rich Text in WYSIWYG through ActionText that can be installed in Rails with `rails action_text:install`.
