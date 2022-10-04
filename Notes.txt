@@ -49,6 +49,9 @@ When navigating associations through Rails we just need to look at the model fil
 
 I need to know what is a lambda func, procs, blocks, need to wrap my head quickly around all these to pick up Rails quickly.
 
+New things I learnt:
+In Rails CLI, there's a command which I didn't knew could be used which is `rails dbconsole` with which we can access our App's DB. It works for all DBs, I have tested it with SQLite, MySQL.
+
 Rails 7 updates:
 Rails 7 now provides the list of methods available on an object in the cmd while tyoing out the query itself, just like it's available in JS consoles. How cool is that! Also now they provide better formatting for the results returned from the Rails console.
 We also have support for Rich Text in WYSIWYG through ActionText that can be installed in Rails with `rails action_text:install`.
