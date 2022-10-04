@@ -31,4 +31,20 @@ Start making faster progress in Rails, since I think I'm going very slow.
 Start reading Active Record basics. I think I need to get my hand on DB deisgn as well quickly.
 
 Actual:
-Today, I added a few gotchas in Rails notes. Now resuming on DHH's video.
+Today, I added a few gotchas in Rails notes. Now resuming on DHH's video. I've completed watching of DHH's video, but I've not implemented it completely, even though I sat for extra time today.
+
+Day 5 - 30 September 2022:
+Motto:
+Finish off implementation of DHH's video. Revise stuff quickly, so that I can pick up pace in the upcoming apps.
+Start off on
+
+Actual:
+I did nothing on this day. Such a shame.
+
+For 4-5 days, I didn nothing in this particular Repo, but I was working on the Back End work that the company had assigned me. And even more work is getting assigned to me in the Back End. So, I'm happy to be doing it.
+
+Day 6 - 4 October 2022:
+Motto:
+Start off again on the Food Log App. Try to finish it today.
+
+Actual:
