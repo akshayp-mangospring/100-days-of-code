@@ -1,4 +1,4 @@
-<%= form_with(model: entry) do |form| %>
+<%= form_with(model: entry) do |f| %>
   <% if entry.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
@@ -12,31 +12,31 @@
   <% end %>
 
   <div>
-    <%= form.label :meal_type, style: "display: block" %>
-    <%= form.text_field :meal_type %>
+    <%= f.label :meal_type, style: "display: block" %>
+    <%= f.text_field :meal_type %>
   </div>
 
   <div>
-    <%= form.label :calories, style: "display: block" %>
-    <%= form.number_field :calories %>
+    <%= f.label :calories, style: "display: block" %>
+    <%= f.number_field :calories %>
   </div>
 
   <div>
-    <%= form.label :proteins, style: "display: block" %>
-    <%= form.number_field :proteins %>
+    <%= f.label :proteins, style: "display: block" %>
+    <%= f.number_field :proteins %>
   </div>
 
   <div>
-    <%= form.label :carbohydrates, style: "display: block" %>
-    <%= form.number_field :carbohydrates %>
+    <%= f.label :carbohydrates, style: "display: block" %>
+    <%= f.number_field :carbohydrates %>
   </div>
 
   <div>
-    <%= form.label :fats, style: "display: block" %>
-    <%= form.number_field :fats %>
+    <%= f.label :fats, style: "display: block" %>
+    <%= f.number_field :fats %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= f.submit %>
   </div>
 <% end %>
