@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import EntryForm from "./EntryForm";
+import NewMealForm from "./NewMealForm";
 
 function App() {
-  const [foodItems, setFoodItems] = useState([]);
+  const [meals, setMeals] = useState([]);
   const [showEntry, setShowEntry] = useState(false);
 
   useEffect(() => {
@@ -12,22 +12,32 @@ function App() {
       },
     })
       .then((r) => r.json())
-      .then((data) => setFoodItems(data));
+      .then((res) => setMeals(res));
   }, []);
 
   return (
     <>
       <div className="d-flex justify-content-between align-items-center">
-        <h1>Food Entries</h1>
-        <button type="button" onClick={() => setShowEntry(!showEntry)}>New Entry</button>
+        <h1>Meals</h1>
+        <button type="button" onClick={() => setShowEntry(!showEntry)}>New Meal</button>
       </div>
-      {showEntry && <EntryForm setShowEntry={setShowEntry} />}
+      {showEntry && <NewMealForm setShowEntry={setShowEntry} />}
       {
-        foodItems.length ? (
+        meals.length ? (
           <ul>
-            <li></li>
+            {
+              meals.map(({ calories, carbs, fats, id, meal_type, proteins }) => (
+                <li key={id}>
+                  <p>Name: {meal_type}</p>
+                  <p>Calories: {calories}</p>
+                  <p>Fats: {fats}</p>
+                  <p>Carbs: {carbs}</p>
+                  <p>Proteins: {proteins}</p>
+                </li>
+              ))
+            }
           </ul>
-        ) : <h1>No Food Items</h1>
+        ) : <h1>No Meals</h1>
       }
     </>
   );

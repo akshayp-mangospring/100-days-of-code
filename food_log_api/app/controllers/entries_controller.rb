@@ -7,9 +7,9 @@ class EntriesController < ApplicationController
   end
 
   def create
-    @entry = Entry.new
+    @entry = Entry.new(entry_params)
 
-    if @entry.save(entry_params)
+    if @entry.save
       render json: @entry
     else
       render json: { message: 'Error Occured' }
