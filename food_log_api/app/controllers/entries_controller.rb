@@ -1,5 +1,5 @@
 class EntriesController < ApplicationController
-  before_action :set_entry, only %i[show update destroy]
+  before_action :set_entry, only: %i[ show update destroy ]
 
   def index
     @entries = Entry.all
@@ -42,6 +42,12 @@ class EntriesController < ApplicationController
     end
 
     def set_entry
-      @entry = Entry.find(params[:id])
+      # Had to use `begin...rescue` block here
+      # Since `.find` raises an exception if the record isn't found
+      begin
+        @entry = Entry.find(params[:id])
+      rescue => e
+        render json: { message: 'Not Found' }
+      end
     end
 end
