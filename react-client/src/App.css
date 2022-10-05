@@ -30,4 +30,10 @@
   padding: 10px;
   border: 1px solid #000;
   border-radius: 5px;
+  max-height: 90vh;
+}
+
+.popup-content {
+  max-height: 50vh;
+  overflow: auto;
 }

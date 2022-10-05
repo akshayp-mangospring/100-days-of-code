@@ -40,8 +40,8 @@ function NewMealForm({ setShowEntry }) {
   return (
     <div className="overlay" onClick={isOverlayClicked}>
       <div className="popup">
+        <h4>Make a Meal Entry</h4>
         <div className="popup-content">
-          <h3>Make a Meal Entry</h3>
           <div id="meal-points">
             <div>
               <label htmlFor="meal_type">Type</label>
@@ -64,8 +64,8 @@ function NewMealForm({ setShowEntry }) {
               <input id="carbs" type="number" />
             </div>
           </div>
-          <button type="button" onClick={submitEntry}>Submit</button>
         </div>
+        <button type="button" onClick={submitEntry}>Submit</button>
       </div>
     </div>
   );
