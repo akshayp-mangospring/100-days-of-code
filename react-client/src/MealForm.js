@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function MealForm({
   isNew,
@@ -9,7 +9,31 @@ function MealForm({
   setMealDetails: propSetMealDetails
 }) {
   const [mealDetails, setMealDetails] = useState(propMealDetails);
+  const [formValid, setFormValid] = useState(false);
   const { id, calories, carbs, fats, meal_type, proteins } = mealDetails;
+
+  useEffect(() => {
+    const { calories, carbs, fats, meal_type, proteins } = mealDetails;
+    const vals = [calories, carbs, fats, proteins];
+    let disableBtn = false;
+
+    console.log(mealDetails);
+
+    for (let i = 0; i < vals.length; i++) {
+      const el = vals[i];
+
+      if (isNaN(el) || el === undefined || el < 0) {
+        disableBtn = true;
+        break;
+      }
+    }
+
+    if (meal_type === '' || meal_type === undefined) {
+      disableBtn = true;
+    }
+
+    setFormValid(disableBtn);
+  }, [mealDetails]);
 
   const getAddedMeals = (r) => [...meals, r];
 
@@ -26,7 +50,7 @@ function MealForm({
     const getUrl = () => isNew ? 'http://localhost:3000/entries' : `http://localhost:3000/entries/${id}`;
     const getMethod = () => isNew ? 'POST' : 'PUT';
     const getUpdateFunc = () => isNew ? getAddedMeals : getUpdatedMeals;
-    const getDialogHeader = () => isNew ? 'Make a Meal Entry' : 'Edit Meal';
+    const getDialogHeader = () => isNew ? 'New Meal' : 'Edit Meal';
 
     return {
       url: getUrl(),
@@ -40,7 +64,7 @@ function MealForm({
 
   const changeMealDetails = (e) => {
     const val = e.currentTarget.value;
-    const parsedVal = e.currentTarget.type === 'number' ? parseFloat(val, 10) : val;
+    const parsedVal = e.currentTarget.type === 'number' ? parseFloat((val || 0), 10) : val;
 
     setMealDetails({
       ...mealDetails,
@@ -86,23 +110,23 @@ function MealForm({
           </div>
           <div>
             <label htmlFor="calories">Calories</label>
-            <input id="calories" type="number" value={calories} onChange={changeMealDetails} />
+            <input id="calories" type="number" value={(calories || 0).toString()} onChange={changeMealDetails} />
           </div>
           <div>
             <label htmlFor="proteins">Proteins</label>
-            <input id="proteins" type="number" value={proteins} onChange={changeMealDetails} />
+            <input id="proteins" type="number" value={(proteins || 0).toString()} onChange={changeMealDetails} />
           </div>
           <div>
             <label htmlFor="fats">Fats</label>
-            <input id="fats" type="number" value={fats} onChange={changeMealDetails} />
+            <input id="fats" type="number" value={(fats || 0).toString()} onChange={changeMealDetails} />
           </div>
           <div>
             <label htmlFor="carbs">Carbs</label>
-            <input id="carbs" type="number" value={carbs} onChange={changeMealDetails} />
+            <input id="carbs" type="number" value={(carbs || 0).toString()} onChange={changeMealDetails} />
           </div>
         </div>
         <div className="popup-bottom">
-          <button type="button" className="bottom-0" onClick={submitMeal}>Submit</button>
+          <button type="button" className="bottom-0" onClick={submitMeal} disabled={formValid}>Submit</button>
         </div>
       </div>
     </div>
