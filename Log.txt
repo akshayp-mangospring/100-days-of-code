@@ -59,3 +59,9 @@ I've added a Food Log API only App and I'm integrating it with React.
 I've solved the CORS issues on the Front and the Back, added SimpleCSS, added a Popup with an overlay.
 Integrated Create, Read Actions in the Food Log API App.
 Added the validations for the data.
+
+Day 8 - 6 October 2022:
+Motto:
+Finish the Full Stack App of basic CRUD for Food Log API
+
+Actual:
