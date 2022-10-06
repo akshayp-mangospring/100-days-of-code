@@ -62,6 +62,6 @@ Added the validations for the data.
 
 Day 8 - 6 October 2022:
 Motto:
-Finish the Full Stack App of basic CRUD for Food Log API
+Finish the Full Stack App of basic CRUD for Food Log API.
 
 Actual:

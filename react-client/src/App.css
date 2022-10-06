@@ -12,6 +12,14 @@
   justify-content: space-between;
 }
 
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.left-5 {
+  margin-left: 5px;
+}
+
 .overlay {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.3);
