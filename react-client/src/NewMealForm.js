@@ -1,7 +1,6 @@
 import React from 'react';
 
 function NewMealForm({ setShowEntry }) {
-
   const submitEntry = () => {
     const entryData = {};
     const labels = document.querySelectorAll('#meal-points label');
