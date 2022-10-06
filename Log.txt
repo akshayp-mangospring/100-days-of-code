@@ -65,3 +65,4 @@ Motto:
 Finish the Full Stack App of basic CRUD for Food Log API.
 
 Actual:
+I've finished the Full Stack App of basic CRUD for Food Log API.

@@ -26,15 +26,17 @@ function MealForm({
     const getUrl = () => isNew ? 'http://localhost:3000/entries' : `http://localhost:3000/entries/${id}`;
     const getMethod = () => isNew ? 'POST' : 'PUT';
     const getUpdateFunc = () => isNew ? getAddedMeals : getUpdatedMeals;
+    const getDialogHeader = () => isNew ? 'Make a Meal Entry' : 'Edit Meal';
 
     return {
       url: getUrl(),
       method: getMethod(),
       updateFunc: getUpdateFunc(),
+      dialogHeader: getDialogHeader(),
     }
   })();
 
-  const { url, method, updateFunc } = requestData;
+  const { url, method, updateFunc, dialogHeader } = requestData;
 
   const changeMealDetails = (e) => {
     const val = e.currentTarget.value;
@@ -74,7 +76,7 @@ function MealForm({
   return (
     <div className="overlay" onClick={isOverlayClicked}>
       <div className="popup">
-        <h4>Make a Meal Entry</h4>
+        <h4>{dialogHeader}</h4>
         <div className="popup-content">
           <div id="meal-points">
             <div>
