@@ -36,9 +36,9 @@ function App() {
   };
 
   return (
-    <>
-      <div className="d-flex justify-content-between align-items-center">
-        <h1>Meals</h1>
+    <div className="container">
+      <div className="flex justify-content-between align-items-center p-10">
+        <h1 className="semi-bold">Meals</h1>
         <button type="button" onClick={() => setShowEntry(!showEntry)}>New Meal</button>
       </div>
       {showEntry && (
@@ -66,12 +66,24 @@ function App() {
             {
               meals.map(({ calories, carbs, fats, id, meal_type, proteins }) => (
                 <li key={id}>
-                  <p>Name: {meal_type}</p>
-                  <p>Calories: {calories}</p>
-                  <p>Fats: {fats}</p>
-                  <p>Carbs: {carbs}</p>
-                  <p>Proteins: {proteins}</p>
-                  <div className="d-flex justify-content-end">
+                  <h3>{meal_type}</h3>
+                  <p className="bottom-0">
+                    <span className="semi-bold">Calories:</span>
+                    <span className="left-5">{calories}</span>
+                  </p>
+                  <p className="bottom-0">
+                    <span className="semi-bold">Fats:</span>
+                    <span className="left-5">{fats}</span>
+                  </p>
+                  <p className="bottom-0">
+                    <span className="semi-bold">Carbs:</span>
+                    <span className="left-5">{carbs}</span>
+                  </p>
+                  <p className="bottom-0">
+                    <span className="semi-bold">Proteins:</span>
+                    <span className="left-5">{proteins}</span>
+                  </p>
+                  <div className="flex justify-content-end">
                     <button data-id={id} onClick={editEntry}>Edit</button>
                     <button className="left-5" data-id={id} onClick={deleteEntry}>Delete</button>
                   </div>
@@ -81,7 +93,7 @@ function App() {
           </ul>
         ) : <h1>No Meals</h1>
       }
-    </>
+    </div>
   );
 }
 

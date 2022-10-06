@@ -1,25 +1,3 @@
-@import url('~simpledotcss/simple.min.css');
-
-.d-flex {
-  display: flex;
-}
-
-.align-items-center {
-  align-items: center;
-}
-
-.justify-content-between {
-  justify-content: space-between;
-}
-
-.justify-content-end {
-  justify-content: flex-end;
-}
-
-.left-5 {
-  margin-left: 5px;
-}
-
 .overlay {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.3);
@@ -34,14 +12,27 @@
   top: 10%;
   left: 50%;
   transform: translateX(-50%);
-  background: #fff;
-  padding: 10px;
-  border: 1px solid #000;
-  border-radius: 5px;
   max-height: 90vh;
+  min-width: 350px;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 3px #747681;
+  box-shadow: 0 1px 3px #747681;
+}
+
+.popup-header {
+  border-bottom: 1px solid #747681;
+  padding: 10px;
 }
 
 .popup-content {
   max-height: 50vh;
   overflow: auto;
+  padding: 10px;
+}
+
+.popup-bottom {
+  border-top: 1px solid #747681;
+  padding: 10px;
 }

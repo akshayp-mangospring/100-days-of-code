@@ -25,17 +25,22 @@ function DeleteMealPopup({ setShowDelete, mealDetails, setMealDetails, setMeals,
 
     if (e.target.classList.contains('overlay')) {
       setShowDelete(false);
+      setMealDetails({});
     }
   };
 
   return (
     <div className="overlay" onClick={isOverlayClicked}>
       <div className="popup">
-        <h4>Delete Meal</h4>
-        <div className="popup-content">
-          <p>Are you sure you want to delete {name}?</p>
+        <div className="popup-header">
+          <h2>Delete Meal</h2>
         </div>
-        <button type="button" onClick={deleteMeal}>Submit</button>
+        <div className="popup-content">
+          <p>Are you sure you want to delete <span className="bold">{name}</span>?</p>
+        </div>
+        <div className="popup-bottom">
+          <button type="button" className="bottom-0" onClick={deleteMeal}>Submit</button>
+        </div>
       </div>
     </div>
   );

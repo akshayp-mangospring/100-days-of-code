@@ -76,32 +76,34 @@ function MealForm({
   return (
     <div className="overlay" onClick={isOverlayClicked}>
       <div className="popup">
-        <h4>{dialogHeader}</h4>
+        <div className="popup-header">
+          <h2>{dialogHeader}</h2>
+        </div>
         <div className="popup-content">
-          <div id="meal-points">
-            <div>
-              <label htmlFor="meal_type">Type</label>
-              <input id="meal_type" type="text" value={meal_type || ''} onChange={changeMealDetails} />
-            </div>
-            <div>
-              <label htmlFor="calories">Calories</label>
-              <input id="calories" type="number" value={calories || 0} onChange={changeMealDetails} />
-            </div>
-            <div>
-              <label htmlFor="proteins">Proteins</label>
-              <input id="proteins" type="number" value={proteins || 0} onChange={changeMealDetails} />
-            </div>
-            <div>
-              <label htmlFor="fats">Fats</label>
-              <input id="fats" type="number" value={fats || 0} onChange={changeMealDetails} />
-            </div>
-            <div>
-              <label htmlFor="carbs">Carbs</label>
-              <input id="carbs" type="number" value={carbs || 0} onChange={changeMealDetails} />
-            </div>
+          <div>
+            <label htmlFor="meal_type">Type</label>
+            <input id="meal_type" type="text" value={meal_type || ''} onChange={changeMealDetails} />
+          </div>
+          <div>
+            <label htmlFor="calories">Calories</label>
+            <input id="calories" type="number" value={calories || 0} onChange={changeMealDetails} />
+          </div>
+          <div>
+            <label htmlFor="proteins">Proteins</label>
+            <input id="proteins" type="number" value={proteins || 0} onChange={changeMealDetails} />
+          </div>
+          <div>
+            <label htmlFor="fats">Fats</label>
+            <input id="fats" type="number" value={fats || 0} onChange={changeMealDetails} />
+          </div>
+          <div>
+            <label htmlFor="carbs">Carbs</label>
+            <input id="carbs" type="number" value={carbs || 0} onChange={changeMealDetails} />
           </div>
         </div>
-        <button type="button" onClick={submitMeal}>Submit</button>
+        <div className="popup-bottom">
+          <button type="button" className="bottom-0" onClick={submitMeal}>Submit</button>
+        </div>
       </div>
     </div>
   );
