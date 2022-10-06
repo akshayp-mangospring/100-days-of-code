@@ -19,10 +19,10 @@ function App() {
   }, []);
 
   const getCurrentMeal = (el) => {
-    const elId = parseInt(el.getAttribute('data-id'));
+    const elId = parseInt(el.getAttribute('data-id'), 10);
     const clickedMeal = meals.filter(({ id }) => id === elId);
 
-    return clickedMeal[0];
+    return clickedMeal.getFirst();
   };
 
   const editEntry = (e) => {
