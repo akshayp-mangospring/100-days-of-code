@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import DeleteMealPopup from './DeleteMealPopup';
 import MealForm from './MealForm';
 
 function App() {
   const [meals, setMeals] = useState([]);
   const [mealDetails, setMealDetails] = useState({});
   const [showEntry, setShowEntry] = useState(false);
+  const [showDelete, setShowDelete] = useState(false);
 
   useEffect(() => {
     fetch('http://localhost:3000', {
@@ -16,15 +18,21 @@ function App() {
       .then((res) => setMeals(res));
   }, []);
 
+  const getCurrentMeal = (el) => {
+    const elId = parseInt(el.getAttribute('data-id'));
+    const clickedMeal = meals.filter(({ id }) => id === elId);
+
+    return clickedMeal[0];
+  };
+
   const editEntry = (e) => {
-    const id = e.currentTarget.getAttribute('data-id');
-    const currentMeal = meals.filter(({ id: mealId }) => mealId === parseInt(id, 10));
-    setMealDetails(currentMeal[0]);
+    setMealDetails(getCurrentMeal(e.currentTarget));
     setShowEntry(true);
   };
 
   const deleteEntry = (e) => {
-
+    setMealDetails(getCurrentMeal(e.currentTarget));
+    setShowDelete(true);
   };
 
   return (
@@ -41,6 +49,15 @@ function App() {
           setMeals={setMeals}
           setMealDetails={setMealDetails}
           setShowEntry={setShowEntry}
+        />
+      )}
+      {showDelete && (
+        <DeleteMealPopup
+          setShowDelete={setShowDelete}
+          meals={meals}
+          setMeals={setMeals}
+          mealDetails={mealDetails}
+          setMealDetails={setMealDetails}
         />
       )}
       {
