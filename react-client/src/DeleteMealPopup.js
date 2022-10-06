@@ -3,6 +3,8 @@ import React from 'react';
 function DeleteMealPopup({ setShowDelete, mealDetails, setMealDetails, setMeals, meals }) {
   const {id, meal_type: name} = mealDetails;
 
+  const filterMeals = () => meals.filter((m) => m.id !== id);
+
   const deleteMeal = () => {
     fetch(`http://localhost:3000/entries/${id}`, {
       method: 'DELETE',
@@ -17,8 +19,6 @@ function DeleteMealPopup({ setShowDelete, mealDetails, setMealDetails, setMeals,
         setMealDetails({});
       });
   };
-
-  const filterMeals = () => meals.filter((m) => m.id !== id);
 
   const isOverlayClicked = (e) => {
     e.stopPropagation();

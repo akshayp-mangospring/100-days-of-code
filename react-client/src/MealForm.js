@@ -11,17 +11,30 @@ function MealForm({
   const [mealDetails, setMealDetails] = useState(propMealDetails);
   const { id, calories, carbs, fats, meal_type, proteins } = mealDetails;
 
+  const getAddedMeals = (r) => [...meals, r];
+
+  const getUpdatedMeals = (r) => (
+    meals.map((m) => {
+      if (m.id === r.id) {
+        return r;
+      }
+      return m;
+    })
+  );
+
   const requestData = (() => {
     const getUrl = () => isNew ? 'http://localhost:3000/entries' : `http://localhost:3000/entries/${id}`;
     const getMethod = () => isNew ? 'POST' : 'PUT';
+    const getUpdateFunc = () => isNew ? getAddedMeals : getUpdatedMeals;
 
     return {
       url: getUrl(),
       method: getMethod(),
+      updateFunc: getUpdateFunc(),
     }
   })();
 
-  const { url, method } = requestData;
+  const { url, method, updateFunc } = requestData;
 
   const changeMealDetails = (e) => {
     const val = e.currentTarget.value;
@@ -32,15 +45,6 @@ function MealForm({
       [e.currentTarget.id]: parsedVal,
     });
   };
-
-  const getUpdatedMeals = (r) => (
-    meals.map((m) => {
-      if (m.id === r.id) {
-        return r;
-      }
-      return m;
-    })
-  );
 
   const submitMeal = () => {
     fetch(url, {
@@ -53,7 +57,7 @@ function MealForm({
       .then((r) => r.json())
       .then((res) => {
         setShowEntry(false);
-        setMeals(getUpdatedMeals(res));
+        setMeals(updateFunc(res));
         propSetMealDetails({});
       });
   };
