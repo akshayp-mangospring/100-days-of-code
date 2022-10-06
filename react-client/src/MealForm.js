@@ -82,23 +82,23 @@ function MealForm({
         <div className="popup-content">
           <div>
             <label htmlFor="meal_type">Type</label>
-            <input id="meal_type" type="text" value={meal_type || ''} onChange={changeMealDetails} />
+            <input id="meal_type" type="text" value={meal_type} onChange={changeMealDetails} />
           </div>
           <div>
             <label htmlFor="calories">Calories</label>
-            <input id="calories" type="number" value={calories || 0} onChange={changeMealDetails} />
+            <input id="calories" type="number" value={calories} onChange={changeMealDetails} />
           </div>
           <div>
             <label htmlFor="proteins">Proteins</label>
-            <input id="proteins" type="number" value={proteins || 0} onChange={changeMealDetails} />
+            <input id="proteins" type="number" value={proteins} onChange={changeMealDetails} />
           </div>
           <div>
             <label htmlFor="fats">Fats</label>
-            <input id="fats" type="number" value={fats || 0} onChange={changeMealDetails} />
+            <input id="fats" type="number" value={fats} onChange={changeMealDetails} />
           </div>
           <div>
             <label htmlFor="carbs">Carbs</label>
-            <input id="carbs" type="number" value={carbs || 0} onChange={changeMealDetails} />
+            <input id="carbs" type="number" value={carbs} onChange={changeMealDetails} />
           </div>
         </div>
         <div className="popup-bottom">
