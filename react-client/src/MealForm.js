@@ -17,18 +17,16 @@ function MealForm({
     const vals = [calories, carbs, fats, proteins];
     let disableBtn = false;
 
-    console.log(mealDetails);
-
     for (let i = 0; i < vals.length; i++) {
       const el = vals[i];
 
-      if (isNaN(el) || el === undefined || el < 0) {
+      if (isNaN(el) || typeof el === 'undefined' || el === '' || el < 0) {
         disableBtn = true;
         break;
       }
     }
 
-    if (meal_type === '' || meal_type === undefined) {
+    if (typeof meal_type === 'undefined' || meal_type === '') {
       disableBtn = true;
     }
 
@@ -64,7 +62,7 @@ function MealForm({
 
   const changeMealDetails = (e) => {
     const val = e.currentTarget.value;
-    const parsedVal = e.currentTarget.type === 'number' ? parseFloat((val || 0), 10) : val;
+    const parsedVal = e.currentTarget.type === 'number' && val.isNotEmpty() ? parseFloat(val || 0, 10) : val;
 
     setMealDetails({
       ...mealDetails,
@@ -106,23 +104,23 @@ function MealForm({
         <div className="popup-content">
           <div>
             <label htmlFor="meal_type">Type</label>
-            <input id="meal_type" type="text" value={meal_type} onChange={changeMealDetails} />
+            <input id="meal_type" type="text" value={meal_type || ''} onChange={changeMealDetails} />
           </div>
           <div>
             <label htmlFor="calories">Calories</label>
-            <input id="calories" type="number" value={(calories || 0).toString()} onChange={changeMealDetails} />
+            <input id="calories" type="number" value={calories || ''} onChange={changeMealDetails} />
           </div>
           <div>
             <label htmlFor="proteins">Proteins</label>
-            <input id="proteins" type="number" value={(proteins || 0).toString()} onChange={changeMealDetails} />
+            <input id="proteins" type="number" value={proteins || ''} onChange={changeMealDetails} />
           </div>
           <div>
             <label htmlFor="fats">Fats</label>
-            <input id="fats" type="number" value={(fats || 0).toString()} onChange={changeMealDetails} />
+            <input id="fats" type="number" value={fats || ''} onChange={changeMealDetails} />
           </div>
           <div>
             <label htmlFor="carbs">Carbs</label>
-            <input id="carbs" type="number" value={(carbs || 0).toString()} onChange={changeMealDetails} />
+            <input id="carbs" type="number" value={carbs || ''} onChange={changeMealDetails} />
           </div>
         </div>
         <div className="popup-bottom">
