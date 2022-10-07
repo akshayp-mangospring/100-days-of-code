@@ -1,7 +1,7 @@
 import React from 'react';
 
 function DeleteMealPopup({ setShowDelete, mealDetails, setMealDetails, setMeals, meals }) {
-  const {id, meal_type: name} = mealDetails;
+  const { id, meal_type: name } = mealDetails;
 
   const filterMeals = () => meals.filter((m) => m.id !== id);
 
