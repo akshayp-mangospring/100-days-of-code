@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react';
 import DeleteMealPopup from './DeleteMealPopup';
 import MealForm from './MealForm';
 import SignUp from './SignUp';
+import Login from './Login';
 
 function App() {
   const [meals, setMeals] = useState([]);
   const [mealDetails, setMealDetails] = useState({});
   const [showEntry, setShowEntry] = useState(false);
-  const [showSignup, setShowSignup] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
+  const [showSignup, setShowSignup] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
 
   useEffect(() => {
     fetch('http://localhost:3000', {
@@ -43,6 +45,7 @@ function App() {
         <h1 className="semi-bold">Meals</h1>
         <div>
           <button type="button" className="button-outline" onClick={() => setShowEntry(!showEntry)}>New Meal</button>
+          <button type="button" className="left-5 button-outline" onClick={() => setShowLogin(!showLogin)}>Login</button>
           <button type="button" className="left-5" onClick={() => setShowSignup(!showSignup)}>Sign up</button>
         </div>
       </div>
@@ -65,11 +68,8 @@ function App() {
           setMealDetails={setMealDetails}
         />
       )}
-      {showSignup && (
-        <SignUp
-          setShowSignup={setShowSignup}
-        />
-      )}
+      {showSignup && <SignUp setShowSignup={setShowSignup} />}
+      {showLogin && <Login setShowLogin={setShowLogin} />}
       {
         meals.length ? (
           <ul>
