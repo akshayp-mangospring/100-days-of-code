@@ -66,3 +66,24 @@ Finish the Full Stack App of basic CRUD for Food Log API.
 
 Actual:
 I've finished the Full Stack App of basic CRUD for Food Log API.
+
+Day 9 - 7 October 2022:
+Motto:
+Try to expand the application with more models, functionality.
+
+Actual:
+I felt totally disastrous today, I felt worthless for not being able to learn and implement stuff quickly.
+I basically did nothing today and procrastinated all day long.
+
+Day 10 - 8 October 2022:
+Motto:
+Try to add more functionality to the App
+Add Todo List with desc, to do items
+Add Todo Items to Todo List
+Add User Model
+Make meals belong to a user
+
+Actual:
+I stayed overnight at Hitesh's flat
+Added him as a collaborator and and made all the commits from his computer in his name
+Added all the basic stuff of new features I wanted to add today
