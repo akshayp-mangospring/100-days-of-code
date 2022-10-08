@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import backendUrl from '../utils/env';
+
 import DeleteMealPopup from './DeleteMealPopup';
 import MealForm from './MealForm';
 import SignUp from './SignUp';
@@ -13,7 +15,7 @@ function App() {
   const [showLogin, setShowLogin] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:3000', {
+    fetch(backendUrl, {
       headers: {
         'Content-Type': 'application/json'
       },

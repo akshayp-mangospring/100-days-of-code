@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import backendUrl from '../utils/env';
 
 function MealForm({
   isNew,
@@ -45,7 +46,7 @@ function MealForm({
   );
 
   const requestData = (() => {
-    const getUrl = () => isNew ? 'http://localhost:3000/entries' : `http://localhost:3000/entries/${id}`;
+    const getUrl = () => isNew ? `${backendUrl}/entries` : `${backendUrl}/entries/${id}`;
     const getMethod = () => isNew ? 'POST' : 'PUT';
     const getUpdateFunc = () => isNew ? getAddedMeals : getUpdatedMeals;
     const getDialogHeader = () => isNew ? 'New Meal' : 'Edit Meal';

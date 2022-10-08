@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import backendUrl from '../utils/env';
 
 function Login({ setShowLogin, }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const loginUser = () => {
-    fetch('http://localhost:3000/login', {
+    fetch(`${backendUrl}/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

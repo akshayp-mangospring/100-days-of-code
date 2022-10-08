@@ -1,4 +1,5 @@
 import React from 'react';
+import backendUrl from '../utils/env';
 
 function DeleteMealPopup({ setShowDelete, mealDetails, setMealDetails, setMeals, meals }) {
   const { id, meal_type: name } = mealDetails;
@@ -6,7 +7,7 @@ function DeleteMealPopup({ setShowDelete, mealDetails, setMealDetails, setMeals,
   const filterMeals = () => meals.filter((m) => m.id !== id);
 
   const deleteMeal = () => {
-    fetch(`http://localhost:3000/entries/${id}`, {
+    fetch(`${backendUrl}/entries/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'

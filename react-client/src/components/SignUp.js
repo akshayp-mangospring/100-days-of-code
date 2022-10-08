@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import backendUrl from '../utils/env';
 
 function SignUp({ setShowSignup, }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const createUser = () => {
-    fetch('http://localhost:3000/signup', {
+    fetch(`${backendUrl}/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
