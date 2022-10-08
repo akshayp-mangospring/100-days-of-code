@@ -28,7 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_08_122249) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "todo_list_id"
-    t.boolean "done"
+    t.boolean "done", default: false
     t.index ["todo_list_id"], name: "index_todo_items_on_todo_list_id"
   end
 
