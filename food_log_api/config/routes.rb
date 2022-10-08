@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get '/entries/:id', to: 'entries#show'
   put '/entries/:id', to: 'entries#update'
   delete '/entries/:id', to: 'entries#destroy'
+  get '/users', to: 'users#index'
+  post '/signup', to: 'users#signup'
+  get '/users/1', to: 'users#get_first'
 
   # Defines the root path route ("/")
   root "entries#index"
