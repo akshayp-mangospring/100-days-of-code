@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import backendUrl from '../utils/env';
 
-import DeleteMealPopup from './DeleteMealPopup';
 import MealForm from './MealForm';
-import SignUp from './SignUp';
-import Login from './Login';
+import AuthPopup from './popups/Auth';
+import DeleteMealPopup from './popups/DeleteMeal';
 
 function App() {
   const [meals, setMeals] = useState([]);
@@ -70,8 +69,20 @@ function App() {
           setMealDetails={setMealDetails}
         />
       )}
-      {showSignup && <SignUp setShowSignup={setShowSignup} />}
-      {showLogin && <Login setShowLogin={setShowLogin} />}
+      {showLogin && (
+        <AuthPopup
+          header="Login"
+          endpointUrl={`${backendUrl}/login`}
+          setShowAuthPopup={setShowLogin}
+        />
+      )}
+      {showSignup && (
+        <AuthPopup
+          header="Sign up"
+          endpointUrl={`${backendUrl}/signup`}
+          setShowAuthPopup={setShowSignup}
+        />
+      )}
       {
         meals.length ? (
           <ul>

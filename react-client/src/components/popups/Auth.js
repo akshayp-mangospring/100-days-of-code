@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import backendUrl from '../utils/env';
 
-function Login({ setShowLogin, }) {
+function AuthPopup({ endpointUrl, header, setShowAuthPopup }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const loginUser = () => {
-    fetch(`${backendUrl}/login`, {
+  const authenticateUser = () => {
+    fetch(endpointUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -19,7 +18,7 @@ function Login({ setShowLogin, }) {
       .then((r) => r.json())
       .then((res) => {
         console.log(res);
-        setShowLogin(false);
+        setShowAuthPopup(false);
       });
   };
 
@@ -27,7 +26,7 @@ function Login({ setShowLogin, }) {
     e.stopPropagation();
 
     if (e.target.classList.contains('overlay')) {
-      setShowLogin(false);
+      setShowAuthPopup(false);
     }
   };
 
@@ -35,7 +34,7 @@ function Login({ setShowLogin, }) {
     <div className="overlay" onClick={isOverlayClicked}>
       <div className="popup">
         <div className="popup-header">
-          <h2>Login</h2>
+          <h2>{header}</h2>
         </div>
         <div className="popup-content">
           <div>
@@ -48,11 +47,11 @@ function Login({ setShowLogin, }) {
           </div>
         </div>
         <div className="popup-bottom">
-          <button type="button" className="bottom-0" onClick={loginUser}>Login</button>
+          <button type="button" className="bottom-0" onClick={authenticateUser}>{header}</button>
         </div>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default AuthPopup;

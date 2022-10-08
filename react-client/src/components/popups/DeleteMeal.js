@@ -1,5 +1,5 @@
 import React from 'react';
-import backendUrl from '../utils/env';
+import backendUrl from '../../utils/env';
 
 function DeleteMealPopup({ setShowDelete, mealDetails, setMealDetails, setMeals, meals }) {
   const { id, meal_type: name } = mealDetails;
