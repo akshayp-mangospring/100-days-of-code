@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_08_080829) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_08_081411) do
   create_table "entries", force: :cascade do |t|
     t.string "meal_type"
     t.integer "calories"
@@ -21,6 +21,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_08_080829) do
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
     t.index ["user_id"], name: "index_entries_on_user_id"
+  end
+
+  create_table "todo_items", force: :cascade do |t|
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "todo_list_id"
+    t.index ["todo_list_id"], name: "index_todo_items_on_todo_list_id"
   end
 
   create_table "todo_lists", force: :cascade do |t|
