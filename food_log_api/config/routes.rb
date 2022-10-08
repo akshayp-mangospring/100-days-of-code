@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   delete '/entries/:id', to: 'entries#destroy'
   get '/users', to: 'users#index'
   post '/signup', to: 'users#signup'
-  get '/users/1', to: 'users#get_first'
+  get '/users/:id/todo_lists', to: 'users#get_todo_lists'
+  get '/todo_lists/:id/todo_items', to: 'todo_lists#index'
 
   # Defines the root path route ("/")
   root "entries#index"

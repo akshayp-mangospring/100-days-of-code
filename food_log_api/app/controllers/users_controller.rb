@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: %i[ get_todo_lists ]
+
   def index
     @users = User.all
     render json: @users
@@ -19,8 +21,20 @@ class UsersController < ApplicationController
     end
   end
 
+  def get_todo_lists
+    render json: @user.todo_lists
+  end
+
   private
     def user_params
       params.require(:user).permit(:user_name, :password)
+    end
+
+    def set_user
+      begin
+        @user = User.find(params[:id])
+      rescue => e
+        render json: { message: 'Not Found' }
+      end
     end
 end
