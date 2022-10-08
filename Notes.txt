@@ -66,3 +66,6 @@ import LocalTime from "local-time";
 
 LocalTime.start();
 ```
+
+Authentication Flow:
+Add the findings here, since it's the first time I'm doing this........

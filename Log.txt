@@ -87,3 +87,10 @@ Actual:
 I stayed overnight at Hitesh's flat
 Added him as a collaborator and and made all the commits from his computer in his name
 Added all the basic stuff of new features I wanted to add today
+Restructured Code for the App
+
+To Dos for the App:
+Add React Routing for on the client. Show only login, signup links a hero view and a basic homepage before Authenticating.
+Add Authentication flow using `JWT` for the App and write down the findings in the `Notes.txt` of the App
+Add an authentication middleware after adding JWT to the mix. So that only authenticated users are able to perform certain actions.
+After getting inside the app, just let the user create to do lists for himself, along with adding To do items inside a to do list.
