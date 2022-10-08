@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import DeleteMealPopup from './DeleteMealPopup';
 import MealForm from './MealForm';
+import SignUp from './SignUp';
 
 function App() {
   const [meals, setMeals] = useState([]);
   const [mealDetails, setMealDetails] = useState({});
   const [showEntry, setShowEntry] = useState(false);
+  const [showSignup, setShowSignup] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
 
   useEffect(() => {
@@ -39,7 +41,10 @@ function App() {
     <div className="container">
       <div className="flex justify-content-between align-items-center p-10">
         <h1 className="semi-bold">Meals</h1>
-        <button type="button" onClick={() => setShowEntry(!showEntry)}>New Meal</button>
+        <div>
+          <button type="button" className="button-outline" onClick={() => setShowEntry(!showEntry)}>New Meal</button>
+          <button type="button" className="left-5" onClick={() => setShowSignup(!showSignup)}>Sign up</button>
+        </div>
       </div>
       {showEntry && (
         <MealForm
@@ -58,6 +63,11 @@ function App() {
           setMeals={setMeals}
           mealDetails={mealDetails}
           setMealDetails={setMealDetails}
+        />
+      )}
+      {showSignup && (
+        <SignUp
+          setShowSignup={setShowSignup}
         />
       )}
       {
@@ -84,8 +94,8 @@ function App() {
                     <span className="left-5">{proteins}</span>
                   </p>
                   <div className="flex justify-content-end">
-                    <button data-id={id} onClick={editEntry}>Edit</button>
-                    <button className="left-5" data-id={id} onClick={deleteEntry}>Delete</button>
+                    <button className="button-outline" data-id={id} onClick={editEntry}>Edit</button>
+                    <button className="left-5 button-outline" data-id={id} onClick={deleteEntry}>Delete</button>
                   </div>
                 </li>
               ))
