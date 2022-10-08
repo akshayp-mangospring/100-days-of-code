@@ -9,7 +9,7 @@ class AuthController < ApplicationController
       return
     end
 
-    if @user.password == params[:password]
+    if BCrypt::Password.new(@user.password) == params[:password]
       render json: { message: 'Authenticated' }
     else
       render json: { message: 'Unauthenticated' }
