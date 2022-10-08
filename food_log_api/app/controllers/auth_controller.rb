@@ -4,6 +4,11 @@ class AuthController < ApplicationController
   def login
     @user = User.find_by_user_name(params[:user_name])
 
+    if @user.blank?
+      render json: { message: 'Not Found' }
+      return
+    end
+
     if @user.password == params[:password]
       render json: { message: 'Authenticated' }
     else
