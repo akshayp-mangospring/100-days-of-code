@@ -1,6 +1,6 @@
 .overlay {
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--overlay-background-color);
   top: 0;
   right: 0;
   bottom: 0;
@@ -16,13 +16,12 @@
   min-width: 350px;
   padding: 1rem 2rem;
   border-radius: 4px;
-  background: #fff;
-  -webkit-box-shadow: 0 1px 3px #747681;
-  box-shadow: 0 1px 3px #747681;
+  background: var(--popup-background-color);
+  box-shadow: 0 1px 3px var(--separator-color);
 }
 
 .popup-header {
-  border-bottom: 1px solid #747681;
+  border-bottom: 1px solid var(--separator-color);
   padding: 10px;
 }
 
@@ -33,6 +32,6 @@
 }
 
 .popup-bottom {
-  border-top: 1px solid #747681;
+  border-top: 1px solid var(--separator-color);
   padding: 10px;
 }
