@@ -12,7 +12,7 @@ class EntriesController < ApplicationController
     if @entry.save
       render json: @entry
     else
-      render json: { message: 'Error Occured' }
+      render json: { error: 'Error Occured' }
     end
   end
 
@@ -24,15 +24,15 @@ class EntriesController < ApplicationController
     if @entry.update(entry_params)
       render json: @entry
     else
-      render json: { message: 'Error Occured' }
+      render json: { error: 'Error Occured' }
     end
   end
 
   def destroy
     if @entry.destroy
-      render json: { message: 'Entry successfully deleted' }
+      render json: { }, status: :no_content
     else
-      render json: { message: 'Error Occured' }
+      render json: { error: 'Error Occured' }
     end
   end
 
@@ -47,7 +47,7 @@ class EntriesController < ApplicationController
       begin
         @entry = Entry.find(params[:id])
       rescue => e
-        render json: { message: 'Not Found' }
+        render json: { message: 'Not Found' }, status: :not_found
       end
     end
 end

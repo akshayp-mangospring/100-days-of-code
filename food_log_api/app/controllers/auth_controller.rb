@@ -5,14 +5,14 @@ class AuthController < ApplicationController
     @user = User.find_by_user_name(params[:user_name])
 
     if @user.blank?
-      render json: { message: 'Not Found' }
+      render json: { message: 'Not Found' }, status: :not_found
       return
     end
 
     if BCrypt::Password.new(@user.password) == params[:password]
       render json: { message: 'Authenticated' }
     else
-      render json: { message: 'Unauthenticated' }
+      render json: { message: 'Unauthenticated' }, status: :unauthorized
     end
   end
 
@@ -21,9 +21,9 @@ class AuthController < ApplicationController
     @user.password = BCrypt::Password.create(params[:password])
 
     if @user.save
-      render json: @user
+      render json: @user, status: :created
     else
-      render json: { message: 'User not created' }
+      render json: { message: 'User not created' }, status: :bad_request
     end
   end
 

@@ -10,7 +10,7 @@ class TodoListsController < ApplicationController
       begin
         @todo_list = TodoList.find(params[:id])
       rescue => e
-        render json: { message: 'Not Found' }
+        render json: { message: 'Not Found' }, status: :not_found
       end
     end
 end
