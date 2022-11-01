@@ -68,4 +68,22 @@ LocalTime.start();
 ```
 
 Authentication Flow:
-Add the findings here, since it's the first time I'm doing this........
+In auth flow I got to know about status codes, the most used status codes I know are as follows:
+200(Ok) - When you want to send data to the client in response
+201(Created) - When a new resource has been created on the server
+204(No-Content) - When something is successful but you don't want to send any data to the client
+
+302(Found/Redirection) - When something existed on a URL and now it exists on a new URL, so redirect him to the new URL
+
+400(Bad Request) - When a user has sent a malformed request
+401(Unauthorized) - When a user is unauthenticated
+403(Forbidden) - When a user is authenticated but still doesn't have access to the resource.
+404(Not Found) - A requested resource doesn't exist
+413(Payload Too Large) - When the payload sent to the server was way too large than the supported size
+414(URI Too Long) - When the URI request is way too long than the server is willing to interpret. I have actually faced this.
+422(Unprocessable Entity) - When the request sent by the user was correct, but still the request can't be processed due to server problems
+
+500(Internal Server Error) - When everything on the client was correct and there was an error on the server side
+502(Bad gateway) - When the server is up but still gets an invalid response from the server
+503(Service Unavailable) - When the server is down
+504(Gateway Timeout) - When the request made the client wait too long to respond so the client quit waiting
