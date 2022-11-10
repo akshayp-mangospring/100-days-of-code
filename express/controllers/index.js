@@ -2,6 +2,6 @@ const index = (_, w) => {
   w.send('Hello, World!');
 };
 
-module.exports = {
+export default {
   index,
 }

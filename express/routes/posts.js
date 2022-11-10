@@ -1,8 +1,9 @@
-const express = require('express');
-const { index } = require('../controllers/posts');
+import express from 'express';
+import postsContoller from '../controllers/posts.js';
 
+const { index } = postsContoller;
 const r = express.Router();
 
 r.get('/', index);
 
-module.exports = r;
+export default r;

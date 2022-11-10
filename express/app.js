@@ -1,11 +1,12 @@
-const express = require('express');
-const cors = require('cors');
-const { dbConnect } = require('./config/db');
-const baseRoutes = require('./routes');
-const postRoutes = require('./routes/posts');
+import express from 'express';
+import cors from 'cors';
+import db from './config/db.js';
+import baseRoutes from './routes/index.js';
+import postRoutes from './routes/posts.js';
 
 const app = express();
 const port = 4000;
+const { dbConnect } = db;
 
 app.use(cors());
 app.use(baseRoutes);
