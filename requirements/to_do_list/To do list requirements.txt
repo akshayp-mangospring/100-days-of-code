@@ -1,0 +1,37 @@
+The app can have multiple To do lists.
+Each to do list will be opened on a separate page.
+
+A To do list will have multiple to do items.
+A To do item will belong to one To do list.
+Each to do item will have a title.
+Each item can have optional notes where details can be added.
+Each item can have optional due dates.
+Each item can have optional priority.
+Each item can be marked as done or undone via a checkbox next to the to do item.
+Each item of the list will be an accordion, on click of which will show or hide details.
+
+Only undone items can be shown by default, the items which are done are hidden and can be shown upon the click of done items bottom bar. It will open in an accordion. Below the undone items of the To do list.
+
+The Items in the To Do list will be sorted by priority and due date and will be shown in that order only.
+Priority first, due date second.
+Due date can be set, reset, can be changed.
+Priority can be set, reset, can be changed.
+A change in priority or due date of any item will sort the list again.
+
+Options for Priority:
+None
+Low
+Medium
+High
+
+Options for Due date:
+None
+Today
+Tomorrow
+Datepicker calendar
+
+After delete of a to do item from a to do list will also show a small status bar with the option to undo the delete.
+The status bar will appear for 5 secs. Then will vanish, if the user doesn't click on the undo action.
+
+The done items will be shown as striked off from the list.
+Each To do list and To do item can be deleted.
