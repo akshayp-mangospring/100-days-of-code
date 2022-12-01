@@ -111,3 +111,6 @@ Also a thing I learnt was that not to discard my small achievements, instead I s
 MY LIFE IS LITERALLY CHANGING FOR THE BETTER.
 Now I'm off to exercising, since it's time to exercise, maybe I'll get back to 100 days of code later in the day.
 Btw, I'm gonna restart my 100 days of code from day 1 again.
+
+Day 1 - 1 December 2022:
+Add requirements, behavior, screens for To do app
