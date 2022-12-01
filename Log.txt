@@ -94,3 +94,20 @@ Add React Routing for on the client. Show only login, signup links a hero view a
 Add Authentication flow using `JWT` for the App and write down the findings in the `Notes.txt` of the App
 Add an authentication middleware after adding JWT to the mix. So that only authenticated users are able to perform certain actions.
 After getting inside the app, just let the user create to do lists for himself, along with adding To do items inside a to do list.
+
+===================================================
+==== UNINTENDED LONG BREAK IN 100 DAYS OF CODE ====
+===================================================
+
+1 December 2022:
+It's been a very long time that I didn't resume working on my 100 days of code, since I was struggling with consistency.
+But now, I'm more strategic and more consistent than I was ever before. I am exercising consistently, sleeping early at about 10pm and waking up at 4am, which is revolutionary & I am really proud of it. It feels like that I can solve complex problems and can achieve big goals if I am consistent.
+Even when I now look into the mirror I am more confident about my capabilities since exercising is changing my body for the better by the day. My strength is increasing and I am more energetic because if it.
+I also have developed a routine which I follow religiously and I have also started to note down everything that I need to do and need to focus on. It's surprising that such simple habits like noting down the stuff you need to do and having a log of what you have done in the day by the hour can have such profound effects over your mentality. It's a major confidence booster since it gives us absolute control over things and ultimately over our day.
+I am now more willing to try out and do new things, which I was reluctant in doing before. Examples of which are: me joining a German class, me starting exercising, me taking part in organising and playing a role in events in our company, me buying gym clothes, buying veggies and food items for the house, me doing things by initiative instead of dictation like buying a watch, a ring for AauSaheb, etc.
+I am also putting up honest efforts in whatever I do. Examples of which are: I am not picky about the stuff that is handed to me to work upon, I am exercising so that it can produce real results, I am honestly trying to help people, I am helping in household chores, even taking care of Jumbo as and when the time demands, etc.
+I am also becoming more responsible, committed & accountable to people. Examples of which are: I maintain a note of the people I need to get back to when someone has asked me for help, or if I need to report to someone about the status of something which was supposed to be done by me, talking with Saheb & AauSaheb on family matters, taking a little care of them, taking care of Jumbo, etc.
+Also a thing I learnt was that not to discard my small achievements, instead I should celebrate all of my small achievements since it compounds and helps us to grow exponentially. The Compound Effect works.
+MY LIFE IS LITERALLY CHANGING FOR THE BETTER.
+Now I'm off to exercising, since it's time to exercise, maybe I'll get back to 100 days of code later in the day.
+Btw, I'm gonna restart my 100 days of code from day 1 again.
